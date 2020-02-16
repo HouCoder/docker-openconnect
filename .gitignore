@@ -1,2 +1,3 @@
 openconnect.conf
 ss-server/*.json
+!ss-server/example.json

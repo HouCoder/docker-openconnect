@@ -4,12 +4,35 @@ Convert openconnect VPN connection to Shadowsocks server connections to avoid al
 
 ## Setup
 
+Readlly simple, just 5 steps!
+
 1. Clone this repo
-2. `$ mv openconnect.conf.example openconnect.conf`
-3. Fill all the informations in openconnect.conf, todo - get CERT option
-4. Create Shadowsocks server config files in `ss-server` folder, here is how - https://shadowsocks.org/en/config/quick-guide.html
-5. Build image `$ docker build -t docker-openconnect .`
-6. Run image `$ docker run -it --privileged --rm docker-openconnect`
+2. Build image `$ docker build -t docker-openconnect .`
+3. `$ mv openconnect.conf.example openconnect.conf`
+4. [Get CERT option's value](#) and fill all the informations in openconnect.conf
+5 `$ docker-compose up -d`
+
+## Get CERT option's value
+
+In this case `sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` is the `CERT` option's value.
+
+```
+➜  ~ docker run -it --rm docker-openconnect openconnect connect.example.com
+POST https://connect.example.com/
+Connected to 8.8.8.8:443
+SSL negotiation with connect.example.com
+Server certificate verify failed: signer not found
+
+Certificate from VPN server "connect.example.com" failed verification.
+Reason: signer not found
+To trust this server in future, perhaps add this to your command line:
+    --servercert sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Enter 'yes' to accept, 'no' to abort; anything else to view:
+```
+
+## Add more ss servers
+
+Just create more json configurations in `ss-server` folder and update the `PORTS` option in `docker-compose.yml`.
 
 ## Troubleshoots
 
