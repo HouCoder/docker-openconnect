@@ -9,7 +9,7 @@ Readlly simple, just 5 steps!
 1. Clone this repo
 2. Build image `$ docker build -t docker-openconnect .`
 3. `$ mv openconnect.conf.example openconnect.conf`
-4. [Get CERT option's value](#) and fill all the informations in openconnect.conf
+4. [Get CERT option's value](#get-cert-options-value) and fill all the informations in openconnect.conf
 5 `$ docker-compose up -d`
 
 ## Get CERT option's value
@@ -46,7 +46,7 @@ Failed to open HTTPS connection to connect.example.com
 Failed to obtain WebVPN cookie
 ```
 
-Need to update SSL signature in openconnect.conf file.
+Need to update SSL signature in openconnect.conf file, [Get CERT option's value](#get-cert-options-value).
 
 ### 2. Resource temporarily unavailable
 
