@@ -10,7 +10,7 @@ Readlly simple, just 5 steps!
 2. Build image `$ docker build -t docker-openconnect .`
 3. `$ mv openconnect.conf.example openconnect.conf`
 4. [Get CERT option's value](#get-cert-options-value) and fill all the informations in openconnect.conf
-5 `$ docker-compose up -d`
+5. `$ docker-compose up -d`
 
 ## Get CERT option's value
 
