@@ -4,13 +4,14 @@ Convert openconnect VPN connection to Shadowsocks server connections to avoid al
 
 ## Setup
 
-Really simple, just 5 steps!
+Really simple, just 6 steps!
 
 1. Clone this repo
 2. Build image `$ docker build -t docker-openconnect .`
 3. `$ mv openconnect.conf.example openconnect.conf`
 4. [Get CERT option's value](#get-cert-options-value) and fill all the informations in openconnect.conf
 5. `$ docker-compose up -d`
+6. Use your favorite shadowsocks client to establish the connection, here is the [default server configuration](./ss-server/example.json)
 
 ## Get CERT option's value
 
