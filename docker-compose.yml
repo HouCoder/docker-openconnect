@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  docker-openconnect:
+    image: docker-openconnect
+    restart: always
+    container_name: docker-openconnect
+    privileged: true
+    volumes:
+    - ./openconnect.conf:/app/openconnect.conf
+    - ./ss-server:/app/ss-server
+    ports:
+    - "14000:14000"

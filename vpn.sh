@@ -10,11 +10,10 @@ done
 . ./openconnect.conf
 
 # Start VPN
+# https://askubuntu.com/a/1070029
 echo $PASSWORD | openconnect $HOST \
     --user=$EMAIL \
     --passwd-on-stdin \
     --servercert $CERT \
     --authgroup=$GROUP \
-    # https://askubuntu.com/a/1070029
-    --no-dtls \
-    --background
+    --no-dtls
